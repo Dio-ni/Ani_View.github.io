@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>AniView</title>
+   <link rel="stylesheet" href="newbgstyle.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnMj8Xc5_jA0tqVHCoFHCk-2sHt4imItA&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    
+   
+</head>
+<body>
+   <div class="navadapt">
+      <label for="toggle">&#9776;</label>
+   </div>
+   <input type="checkbox" name="" id="toggle">
+   <div class = "nav">
+      <div onclick="window.location.reload()" onmouseover="big(this)" onmouseout="small(this)">Ani_View</div>
+      <div onclick="mood(this)" onmouseover="big(this)" onmouseout="small(this)">dark</div>
+      <div onclick="mood(this)" onmouseover="big(this)" onmouseout="small(this)">Light</div>
+      <div onclick="login()" id="login" onmouseover="big(this)" onmouseout="small(this)">Log In</div>
+      
+   </div>
+   <div class="profile">
+      <img src="00.png" alt="" class="logimg">
+      <div class="name">
+         <p class="nameinside" id="nameinside">name</p>
+         <p class="logout" onclick="returnlog()">log out</p>
+      </div>
+   </div>
+   
+<div class="Main">
+   <div class="Main_Text">
+         <div class="Intro" id="intro" >anime trailers and short reviews</div>
+         <div class="info" id="info">Taking the time to find your anime? We read reviews, watch tops, and as a result, the time is approaching late at night and it's easier to eat all the prepared snacks and go to bed. Admit it, you know that too, don't you? Here is a selection of anime to save time. I. Very often, instead of enjoying watching an interesting title, we spend several hours searching for it.</div>
+         <a href="#" id="linkToEp" src=""></a>   
+   </div>
+   
+   <div class= " catalog">
+      <img class="catalog_img" id ="img" src="https://i.pinimg.com/originals/f8/26/63/f82663c95ccde80628e34594c09a5540.jpg" alt="">
+      
+   </div>
+   
+</div>
+<iframe id="video" src="https://www.youtube.com/embed/2FiRWdK-kY0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<div class="wrapper" id="wrapper">
+   <div class="right">
+      <img class="iconclose" onclick="remove(this)" width="5%" src="https://icon-library.com/images/close-button-icon-png/close-button-icon-png-13.jpg" alt="">
+      <div class="login_right">
+         <div class="tabs">
+            <ul>
+               <li class="register_li"> <b>Register</b> </li>
+               <li class="login_li"> <b>Login</b> </li>
+            </ul>
+         </div>
+
+         <div class="register">
+            <div class="input_field">
+               <input type="text" id="username" placeholder="Username" class="input">
+            </div>
+            <div class="input_field">
+               <input type="text" id="email" placeholder="E-mail" class="input">
+            </div>
+            <div class="input_field">
+               <input type="password" id="pass" pattern=".{6,}" title="Six or more characters" placeholder="Password" class="input">
+            </div>
+            <div class="input_field">
+               <input type="password" id="passrep" placeholder="Password" class="input">
+            </div>
+            <p class="wrongpass">*Your password was confirmed incorrectly</p>
+            <button class="btn btn-outline-light" onclick="check(this)">Register</button>
+            <p>you agree to <a href="#">Terms of Service</a>  & <a href="#">Privacy Policy</a>.</p>
+         </div>
+
+         <div class="login">
+            <div class="input_field">
+               <input type="text" id="username2" placeholder="Username" class="input">
+            </div>
+            <div class="input_field">
+               <input type="password" id="pass2" placeholder="Password" class="input">
+            </div>
+            <p>I forgot my password</p>
+            <button class="btn btn-outline-light" onclick="remove(this)">Login</button>
+            <div class="or">
+               <hr >
+               <p>or</p>
+               <hr >
+            </div>
+            <div class="social">
+               <ul>
+                  <li><a href="#"><i class="fa fa-facebook"></i> </a> </li>
+                  <li><a href="#"><i class="fa fa-twitter"></i> </a> </li>
+                  <li><a href="#"><i class="fa fa-instagram"></i> </a> </li>
+                  <li><a href="#"><i class="fa fa-vk"></i> </a> </li>
+                  <li><a href="#"><i class="fa fa-google"></i> </a> </li>
+               </ul>
+            </div>
+         
+         </div>
+      </div>
+   </div>
+   
+</div>
+<div class="box">
+   <div class = "catalog_items">
+      <button class="btn btn-outline-light " onclick="catalog()">Ganre:</button>
+      <div class="catalog-inner" onclick="change(this)">ALL</div>
+      <div class="catalog-inner" onclick="change(this)">Fantasy</div>
+      <div class="catalog-inner" onclick="change(this)">Comedy</div>
+      <div class="catalog-inner"  onclick="change(this)">Sports</div>
+      <div class="catalog-inner"  onclick="change(this)">School</div>
+   </div>
+   <hr>
+   <div class="all constForBox">
+   <div class="boxes" >   
+      <div class="box-1 box-back" > <p class="box-1-p text">Magatsu Wahrheit<br>Original run: October 13, 2020 – present <br>Tags:
+         Action, Fantasy<br>Episodes: 8<br><a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">Fullmetal Alchemist</a></p> </div>   
+      <p>Fullmetal Alchemist </p>
+   </div>
+
+   <div class="boxes">
+      <div class="box-2 box-back"> <p class="box-2-p text">Status: Finished Airing <br>Genres: Comedy, Sports, Drama, School, Shounen<br>Episodes: 25
+         <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">Haikyuu!!</a></p>
+          </div>
+      <p>Haikyuu!!</p>
+   </div>
+   <div class="boxes">
+      <div class="box-3 box-back"> <p class="box-3-p text">Status: Finished Airing <br>Genres: Action, Adventure, Comedy, Romance, Fantasy<br>Episodes: 13
+         <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">Dungeon ni Deai wo Motomeru!</a></p>
+          </div>
+      <p>Dungeon ni Deai wo Motomeru</p>
+   </div>
+   <div class="boxes">
+      <div class="box-4 box-back"> 
+         <p class="box-4-p text">Status: Finished Airing <br>Genres: Action, Adventure, Comedy, Romance, Fantasy<br>Episodes: 13
+         <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">By the Grace of the Gods</a></p>
+      </div>
+      <p>By the Grace of the Gods</p>
+   </div>
+   <div class="boxes">
+      <div class="box-5 box-back"> 
+         <p class="box-5-p text">Status: Currently Airing <br>Genres: Action, Horror, Demons, Supernatural, School, Shounen<br>Episodes: 24
+         <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">Jujutsu Kaisen</a></p>
+      </div>
+      <p>Jujutsu Kaisen</p>
+   </div>
+   <div class="boxes">  
+      <div class="box-6 box-back"> 
+         <p class="box-6-p text">Status: Currently Airing <br>Genres: Action, Sci-Fi<br>Episodes: 12
+         <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">Akudama Drive</a></p>
+      </div>   
+      <p>Akudama Drive</p>
+   </div>
+   <div class="boxes">
+      <div class="box-7 box-back"> 
+         <p class="box-7-p text">Status: Currently Airing <br>Genres:  Drama, Fantasyi<br>Episodes: 12
+         <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">The Day I Became a God</a></p>
+      </div>  
+      <p>The Day I Became a God</p>
+   </div>
+   <div class="boxes">
+      <div class="box-8 box-back"> 
+         <p class="box-8-p text">Status: Finished Airing <br>Genres: Action, Sci-Fi, Supernatural, Magic, Romance, School<br>Episodes: 26
+         <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">The Irregular at Magic High School</a></p>
+      </div> 
+      <p>The Irregular at Magic High School</p>
+   </div>
+   <div class="boxes">
+      <div class="box-9 box-back"> 
+         <p class="box-9-p text">Status: Finished Airing <br>Genres:  Action, Adventure, Fantasy, Harem <br>Episodes: 13
+         <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">Arifureta</a></p>
+      </div>
+      <p>Arifureta: From Commonplace to World's Strongest</p>
+   </div>
+   <div class="boxes">   
+      <div class="box-10 box-back"> 
+         <p class="box-10-p text">Status: Finished Airing <br>Genres: Fantasy<br>Episodes: 12
+         <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">CHOYOYU!</a></p>
+      </div>   
+      <p>CHOYOYU!: High School Prodigies Have It Easy Even in Another World!</p>
+   </div>
+   <div class="boxes">
+      <div class="box-11 box-back"> 
+         <p class="box-11-p text">Status: Finished Airing <br>Genres: Slice of Life, Drama, Fantasy<br>Episodes: 13
+         <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">Violet Evergarden</a></p>
+      </div>
+      <p>Violet Evergarden</p>
+   </div>
+   <div class="boxes">
+      <div class="box-12 box-back"> 
+         <p class="box-12-p text">Status: Finished Airing <br>Genres: Action, Adventure, Comedy, Magic, Fantasy, Shounen<br>Episodes: 175
+         <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">Fairy Tail</a></p>
+      </div>
+      <p>Fairy Tail</p>
+   </div>
+   <div class="boxes">
+      <div class="box-13 box-back"> 
+         <p class="box-13-p text">Status: Finished Airing <br>Genres: Action, Demons, Historical, Shounen, Supernatural<br>Episodes: 26
+         <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">Demon Slayer</a></p>
+      </div>
+      <p>Demon Slayer: Kimetsu no Yaiba</p>
+   </div>
+   <div class="boxes">
+      <div class="box-14 box-back"> 
+         <p class="box-14-p text">Status: Finished Airing <br>Genres: Action, Game, Adventure, Romance, Fantasy<br>Episodes: 25
+         <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">SAO</a></p>
+      </div>
+      <p>Sword Art Online </p>
+   </div>
+   <div class="boxes">   
+      <div class="box-15 box-back"> 
+         <p class="box-15-p text">Status: Finished Airing <br>Genres: Sports, Shounen<br>Episodes: 39
+         <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">Ginga e Kickoff</a></p>
+      </div> 
+      <p>Ginga e Kickoff!!</p>
+   </div>
+   </div>
+   <div class="fantasy constForBox">
+      <div class="boxes" >   
+         <div class="box-1 box-back" > <p class="box-1-p text">Magatsu Wahrheit<br>Original run: October 13, 2020 – present <br>Tags:
+            Action, Fantasy<br>Episodes: 8<br><a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">Fullmetal Alchemist</a></p> </div>   
+         <p>Fullmetal Alchemist </p>
+      </div>
+      <div class="boxes">
+         <div class="box-3 box-back"> <p class="box-3-p text">Status: Finished Airing <br>Genres: Action, Adventure, Comedy, Romance, Fantasy<br>Episodes: 13
+            <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">Dungeon ni Deai wo Motomeru!</a></p>
+             </div>
+         <p>Dungeon ni Deai wo Motomeru</p>
+      </div>
+      <div class="boxes">
+         <div class="box-4 box-back"> 
+            <p class="box-4-p text">Status: Finished Airing <br>Genres: Action, Adventure, Comedy, Romance, Fantasy<br>Episodes: 13
+            <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">By the Grace of the Gods</a></p>
+         </div>
+         <p>By the Grace of the Gods</p>
+      </div>
+      <div class="boxes">
+         <div class="box-7 box-back"> 
+            <p class="box-7-p text">Status: Currently Airing <br>Genres:  Drama, Fantasyi<br>Episodes: 12
+            <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">The Day I Became a God</a></p>
+         </div>  
+         <p>The Day I Became a God</p>
+      </div>
+      <div class="boxes">
+         <div class="box-9 box-back"> 
+            <p class="box-9-p text">Status: Finished Airing <br>Genres:  Action, Adventure, Fantasy, Harem <br>Episodes: 13
+            <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">Arifureta</a></p>
+         </div>
+         <p>Arifureta: From Commonplace to World's Strongest</p>
+      </div>
+      <div class="boxes">   
+         <div class="box-10 box-back"> 
+            <p class="box-10-p text">Status: Finished Airing <br>Genres: Fantasy<br>Episodes: 12
+            <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">CHOYOYU!</a></p>
+         </div>   
+         <p>CHOYOYU!: High School Prodigies Have It Easy Even in Another World!</p>
+      </div>
+      <div class="boxes">
+         <div class="box-11 box-back"> 
+            <p class="box-11-p text">Status: Finished Airing <br>Genres: Slice of Life, Drama, Fantasy<br>Episodes: 13
+            <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">Violet Evergarden</a></p>
+         </div>
+         <p>Violet Evergarden</p>
+      </div>
+      <div class="boxes">
+         <div class="box-12 box-back"> 
+            <p class="box-12-p text">Status: Finished Airing <br>Genres: Action, Adventure, Comedy, Magic, Fantasy, Shounen<br>Episodes: 175
+            <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">Fairy Tail</a></p>
+         </div>
+         <p>Fairy Tail</p>
+      </div>
+      <div class="boxes">
+         <div class="box-14 box-back"> 
+            <p class="box-14-p text">Status: Finished Airing <br>Genres: Action, Game, Adventure, Romance, Fantasy<br>Episodes: 25
+            <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">SAO</a></p>
+         </div>
+         <p>Sword Art Online </p>
+      </div>
+   </div>
+   <div class="comedy constForBox">
+                  <div class="boxes">
+            <div class="box-2 box-back"> <p class="box-2-p text">Status: Finished Airing <br>Genres: Comedy, Sports, Drama, School, Shounen<br>Episodes: 25
+               <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">Haikyuu!!</a></p>
+                </div>
+            <p>Haikyuu!!</p>
+         </div>
+         <div class="boxes">
+            <div class="box-3 box-back"> <p class="box-3-p text">Status: Finished Airing <br>Genres: Action, Adventure, Comedy, Romance, Fantasy<br>Episodes: 13
+               <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">Dungeon ni Deai wo Motomeru!</a></p>
+                </div>
+            <p>Dungeon ni Deai wo Motomeru</p>
+         </div>
+         <div class="boxes">
+            <div class="box-4 box-back"> 
+               <p class="box-4-p text">Status: Finished Airing <br>Genres: Action, Adventure, Comedy, Romance, Fantasy<br>Episodes: 13
+               <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">By the Grace of the Gods</a></p>
+            </div>
+            <p>By the Grace of the Gods</p>
+         </div>
+         <div class="boxes">
+            <div class="box-9 box-back"> 
+               <p class="box-9-p text">Status: Finished Airing <br>Genres:  Action, Adventure,Comedy, Fantasy, Harem <br>Episodes: 13
+               <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">Arifureta</a></p>
+            </div>
+            <p>Arifureta: From Commonplace to World's Strongest</p>
+         </div>
+         <div class="boxes">
+            <div class="box-12 box-back"> 
+               <p class="box-12-p text">Status: Finished Airing <br>Genres: Action, Adventure, Comedy, Magic, Fantasy, Shounen<br>Episodes: 175
+               <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">Fairy Tail</a></p>
+            </div>
+            <p>Fairy Tail</p>
+         </div>
+
+         <div class="boxes">   
+            <div class="box-15 box-back"> 
+               <p class="box-15-p text">Status: Finished Airing <br>Genres:Comedy, Sports, Shounen<br>Episodes: 39
+               <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">Ginga e Kickoff</a></p>
+            </div> 
+            <p>Ginga e Kickoff!!</p>
+         </div>
+   </div>
+   <div class="sports constForBox">
+        
+         <div class="boxes">   
+            <div class="box-15 box-back"> 
+               <p class="box-15-p text">Status: Finished Airing <br>Genres: Sports, Shounen<br>Episodes: 39
+               <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">Ginga e Kickoff</a></p>
+            </div> 
+            <p>Ginga e Kickoff!!</p>
+         </div>
+         <div class="boxes">
+            <div class="box-2 box-back"> <p class="box-2-p text">Status: Finished Airing <br>Genres: Comedy, Sports, Drama, School, Shounen<br>Episodes: 25
+               <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">Haikyuu!!</a></p>
+                </div>
+            <p>Haikyuu!!</p>
+         </div>
+      
+      
+   </div>
+   <div class="school constForBox">
+      <div class="boxes">
+         <div class="box-2 box-back"> <p class="box-2-p text">Status: Finished Airing <br>Genres: Comedy, Sports, Drama, School, Shounen<br>Episodes: 25
+            <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">Haikyuu!!</a></p>
+             </div>
+         <p>Haikyuu!!</p>
+      </div>
+      <div class="boxes">
+         <div class="box-5 box-back"> 
+            <p class="box-5-p text">Status: Currently Airing <br>Genres: Action, Horror, Demons, Supernatural, School, Shounen<br>Episodes: 24
+            <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">Jujutsu Kaisen</a></p>
+         </div>
+         <p>Jujutsu Kaisen</p>
+      </div>
+      <div class="boxes">
+         <div class="box-8 box-back"> 
+            <p class="box-8-p text">Status: Finished Airing <br>Genres: Action, Sci-Fi, Supernatural, Magic, Romance, School<br>Episodes: 26
+            <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">The Irregular at Magic High School</a></p>
+         </div> 
+         <p>The Irregular at Magic High School</p>
+      </div>
+      <div class="boxes">   
+         <div class="box-10 box-back"> 
+            <p class="box-10-p text">Status: Finished Airing <br>Genres: Fantasy, School<br>Episodes: 12
+            <a class="btn btn-outline-light" style="width: 60%; font-size: 10px; margin: 10% 20% 0 20% ;" onclick="newPage(this)" href="#intro" style="text-decoration:none;">CHOYOYU!</a></p>
+         </div>   
+         <p>CHOYOYU!: High School Prodigies Have It Easy Even in Another World!</p>
+      </div>
+      
+      </div>
+</div>
+
+
+<footer class="footer">
+   <div class="usedLinks">
+      <p class="footerText">Materials:</p>
+      <p>More series on <a href="https://jut.su/">JUT.SU/</a> </p>
+      <p>Or <a href="https://animevost.org">ANIMEVOST.ORG</a></p> 
+      <p>All Informations from <a href="https://myanimelist.net/">MyAnimeList.net/</a></p>
+   </div>
+   <div class="aboutUs">
+      <div class="social">
+         <ul>
+            <li><a href="#"><i class="fa fa-facebook footerFa"></i> </a> </li>
+            <li><a href="https://www.instagram.com/dio.ni/"><i class="fa fa-instagram footerFa"></i> </a> </li>
+            <li><a href="https://vk.com/daiako"><i class="fa fa-vk footerFa"></i> </a> </li>
+            <li><a href="#"><i class="fa fa-google footerFa"></i> </a> </li>
+         </ul>
+      </div>
+   </div>
+   
+
+</footer>
+
+
+<script type="text/javascript" src="newbg.js"></script>
+
+</body>
+
+
+</html>
